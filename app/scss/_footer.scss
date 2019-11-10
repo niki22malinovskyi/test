@@ -1,0 +1,77 @@
+$colors: (
+  footer-bg: $color5,
+  text-col: $color4,
+  border-footer: $border,
+  a-bg: $color2,
+);
+
+.footer{
+  padding: 45px 0 25px;
+  background-color: map-get($colors, footer-bg);
+}
+.wrapper-footer{
+  display: grid;
+  grid-template-columns: 3fr 5fr 3fr;
+  grid-gap: 20px 30px;
+}
+.logo-footer{
+  img{
+    width: 225px;
+  }
+  margin-bottom: 25px;
+}
+.text-footer{
+  padding: 25px 0;
+  border-top: map-get($colors, border-footer);
+  border-bottom: map-get($colors, border-footer);
+  margin-bottom: 15px;
+  p{
+  color: map-get($colors, text-col);
+  }
+}
+.tm-logo-footer{
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: row-reverse;
+  p{
+    color: map-get($colors, text-col);
+  }
+}
+.tm-logo{
+  align-self: center;
+  img{
+    margin-left: 3px;
+  }
+}
+.nav-suport{
+  display: flex;
+  justify-content: space-around;
+}
+.navigation, .suport, .footer-contact{
+  a{
+    font-size: 14px;
+    text-decoration: none;
+    line-height: 30px;
+    &:hover{
+      color: map-get($colors, a-bg);
+    }
+  }
+}
+.footer-contact{
+  span{
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+  padding-bottom: 20px;
+  border-bottom: map-get($colors, border-footer);
+  margin-bottom: 20px;
+}
+.social-footer{
+  margin: 0 -10px;
+  a{
+    margin: 0 15px;
+    &:hover{
+      color: map-get($colors, a-bg);
+    }
+  }
+}

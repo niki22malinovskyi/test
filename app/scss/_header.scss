@@ -1,0 +1,140 @@
+$colors:(
+  a-bg: $color2,
+  accent: $color4,
+  black-text: $color3,
+  grey-link: $color6,
+  blue-bg: $color7,
+  blue-border: $color1,
+  green-blue:$color15,
+);
+
+.header{
+  padding: 5px 0;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+}
+.header-inner{
+  display: flex;
+  justify-content: space-between;
+}
+.contact{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+  a{
+    display: inline-block;
+    margin-left: 10px;
+    color: map-get($colors, grey-link);
+    &:hover{
+      color: map-get($colors, a-bg);
+    }
+    span{
+      display: inline-block;
+      vertical-align: middle;
+      padding-right: 5px;
+    }
+  }
+}
+.social{
+  font-size: 0;
+  a{
+    font-size: 18px;
+    margin: 0 14px;
+    &:hover{
+      color: map-get($colors, a-bg);
+    }
+  }
+}
+
+.menu-btn{
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 90%;
+  width: 25px;
+  background-color: transparent;
+  border: transparent;
+  height: 25px;
+  span, span:before, span:after{
+    display: block;
+    width: 100%;
+    background-color: map-get($colors, green-blue);
+    height: 3px;
+    border-radius: 20%;
+  }
+  span:before{
+    content: '';
+    position: absolute;
+    top: 3px;
+    transition: all .3s;
+  }
+  span:after{
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    transition: all .3s;
+  }
+}
+.menu-btn_active{
+  span{
+    height: 0;
+  }
+  span:before{
+    content: '';
+    top: 50%;
+    transform: translate(0, -50%);
+    transform: rotate(135deg);
+  }
+  span:after{
+    content: '';
+    top: 50%;
+    transform: translate(0, -50%);
+    transform: rotate(-135deg);
+  }
+}
+.menu{
+  display: flex;
+  flex-flow: row wrap;
+  padding: 15px 0;
+  background-color: map-get($colors, a-bg);
+  border-radius: 8px;
+  position: relative;
+  li{
+    padding: 0 25px;
+    a{
+      color: map-get($colors, black-text);
+      font-size: 18px;
+      font-weight: 600;
+      span{
+        display: inline-block;
+        vertical-align: middle;
+      }
+      &:hover{
+        color: map-get($colors, blue-border);
+      }
+    }
+  }
+}
+.dropdown{
+  display: none;
+  background-color: map-get($colors, blue-bg);
+  padding: 15px 30px;
+  li{
+    padding: 10px 0;
+    a{
+      font-size: 14px;
+      color: map-get($colors, accent);
+      &:hover{
+        color: map-get($colors, a-bg);
+      }
+    }
+  }
+  &.active{
+    display: flex;
+    flex-flow: column nowrap;
+    position: absolute;
+    top: 50px;
+    max-width: 250px;
+  }
+}

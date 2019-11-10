@@ -1,0 +1,84 @@
+$colors: (
+  form-bg: $color13,
+  h-color: $color4,
+  form-info: $color14,
+  form-border: $border,
+  accent: $color4,
+  black-text: $color3
+);
+
+.form{
+  padding: 45px 0;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: map-get($colors , form-bg);
+  }
+  
+}
+.box-form{
+  position: relative;
+  h2{
+    color: map-get($colors , h-color );
+  }
+}
+.form-info{
+  background-color: map-get($colors , form-info);
+  padding: 55px 10px;
+  ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  li{
+    flex-basis: 230px;
+    padding: 0 5px;
+    margin-bottom: 10px;
+    align-self: center;
+  }
+  input, select{
+    padding: 7px 10px;
+    background-color: transparent;
+    border: 0;
+    border-bottom: map-get($colors , form-border);
+    color: map-get($colors , accent);
+    outline: none;
+    &::placeholder{
+      color: map-get($colors , accent);
+      font-family: $fira;
+    }
+  }
+  select{
+    width: 214px;
+    appearance: none;
+    font-family: $fira;
+    option{
+      color: map-get($colors , black-text);
+    }
+  }
+  button{
+    border: 0;
+  }
+}
+.select-icon{
+  display: inline-block;
+  position: relative;
+  &::after{
+    content: "\f107";
+    font-family: $icon;
+    position: absolute;
+    top: 6px;
+    right: 13px;
+    font-size: 23px;
+    color: map-get($colors , accent);
+    pointer-events: none;
+  }
+}

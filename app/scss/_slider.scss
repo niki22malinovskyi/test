@@ -1,0 +1,61 @@
+$colors:(
+  slider-bg: $color8,
+  box-bg: $color9,
+  dots-bg: $color6,
+  dots-act: $color2,
+);
+.slide{
+  height: 100vh;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: map-get($colors, slider-bg);
+  }
+}
+.inner-box{
+  max-width: 1350px;
+  width: 100%;
+  padding: 65px 0 45px;
+  background-color: map-get($colors, box-bg);
+  position: absolute;
+  top: 40%;
+}
+.box{
+  padding: 0 15px;
+  max-width: 960px;
+  margin-left: auto;
+}
+.slick-dots{
+  display: flex;
+  position: absolute;
+  bottom: 25px;
+  left: 16%;
+  li{
+    margin-left: 14px;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+  button{
+    height: 14px;
+    width: 14px;
+    font-size: 0;
+    border: 0;
+    border-radius: 50%;
+    background-color: map-get($colors, dots-bg);
+    outline: none;
+  }
+  .slick-active{
+    button{
+      background-color: map-get($colors, dots-act);
+    }
+  }
+}

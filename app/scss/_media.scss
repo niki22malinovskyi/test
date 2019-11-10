@@ -1,0 +1,112 @@
+
+@media screen and (max-width: 992px){
+
+  .contact{
+    display: none;
+  }
+  .menu{
+    display: none;
+  }
+  .menu_active{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: scroll;
+    li {
+      padding: 20px 0;
+      a{
+        padding: 0 20px;
+        display: inline-block;
+      }
+    }
+  }
+  .menu-btn{
+    display: flex;
+    z-index: 20;
+  }
+  .dropdown-1{
+    &.active{
+      top: 125px;
+      left: 50%;
+      transform: translate(-50%, 0)
+    }
+  }
+  .dropdown-2{
+    &.active{
+      top: 240px;
+      left: 50%;
+      transform: translate(-50%, 0)
+    }
+  }
+
+  .wrap-tour{
+    flex-flow: column nowrap;
+  }
+  .img-tour{
+    margin-bottom: 20px;
+  }
+  .success{
+    h2{
+      font-size: 20px;
+    }
+  }
+  .success-block{
+    grid-template-columns: 1fr;
+  }
+  .success-img{
+    margin-bottom: 20px;
+  }
+  .form-info{
+    li{
+      flex-basis: 50%;
+      text-align: center;
+    }
+  }
+  .wrapper-footer{
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px){
+  .box{
+    h1{
+      font-size: 24px;
+    }
+  }
+  
+  .wrapper-footer{
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 500px){
+  .tours{
+    .slick-slide {
+      margin-left: 0px;
+    }
+    .slick-list {
+      margin-left: 0px;
+    }
+  }
+  .wrapper-slide-tour{
+    padding: 0 15px;
+  }
+  .tourism{
+    justify-content: center;
+  }
+  .form-info{
+    li{
+      flex-basis: 100%;
+      text-align: center;
+    }
+  }
+  .wrapper-footer{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}

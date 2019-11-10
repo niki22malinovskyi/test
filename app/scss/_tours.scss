@@ -1,0 +1,124 @@
+$colors:(
+  item-bg: $color10,
+  color-indx: $color11,
+  yellow-bg: $color2,
+  icon-bg: $color12,
+  text-black: $color3,
+  a-hov: $color1,
+);
+.tours{
+  padding: 75px 0;
+  position: relative;
+  .slick-slide {
+    margin-left: 70px;
+  }
+  .slick-list {
+    margin-left: -70px;
+  }
+}
+.tourism{
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 70px;
+  li{
+    flex-basis: 200px;
+    padding: 0 5px;
+    text-align: center;
+    button{
+      font-size: 20px;
+      font-weight: 600;
+      color: map-get($colors, text-black);
+      border: 0;
+      background-color: transparent;
+      cursor: pointer;
+      &:hover{
+        color: map-get($colors, yellow-bg);
+      }
+    }
+  }
+}
+
+.slick{
+  padding: 0 100px;
+}
+
+.slide-tour{
+  padding: 13px 0;
+  background-color: map-get($colors, item-bg);
+  border-radius: 5px;
+}
+.wrap-tour{
+  display: flex;
+  justify-content: space-between;
+}
+.img-tour, .info-tour{
+  padding: 0 13px;
+}
+.img-tour{
+  align-self: center;
+  img{
+    border-radius: 4px;
+  }
+}
+.price{
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row-reverse;
+  p{
+    align-self: center;
+  }
+  sup{
+    color: map-get($colors, color-indx);
+    font-size: 11px;
+  }
+  a{
+    display: inline-block;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    background-color: map-get($colors, yellow-bg);
+    position: relative;
+    &::before{
+      content: "\f105";
+      position: absolute;
+      font-family: $icon;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: map-get($colors, icon-bg);
+    }
+    &:hover{
+      background-color: map-get($colors, a-hov);
+    }
+  }
+}
+.slick-arrow{
+  border: 0;
+  background-color: transparent;
+  transform: translate(0, -50%)
+}
+.slick-next{
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  &::before{
+    content: "\f105";
+    font-family: $icon;
+    font-size: 18px;
+    color: map-get($colors, icon-bg);
+    font-size: 28px;
+  }
+}
+.slick-prev{
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  z-index: 10;
+  &::before{
+    content: "\f104";
+    font-family: $icon;
+    font-size: 18px;
+    color: map-get($colors, icon-bg);
+    font-size: 28px;
+  }
+}
